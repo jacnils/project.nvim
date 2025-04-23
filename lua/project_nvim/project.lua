@@ -13,7 +13,7 @@ function M.find_lsp_root()
   -- Get lsp client for current buffer
   -- Returns nil or string
   local original_bufnr = vim.api.nvim_get_current_buf()
-  local clients = vim.lsp.get_active_clients({ bufnr = original_bufnr })
+  local clients = vim.lsp.get_clients({ bufnr = original_bufnr })
   local fname = vim.api.nvim_buf_get_name(original_bufnr)
   local root_dir = nil
   if next(clients) == nil then
